@@ -23,6 +23,9 @@ btnNums.forEach((element) => {
     element = document.querySelector(`#${element}`)
 
     element.addEventListener('click', () => {
+        if (display.textContent == 'ERROR') {
+            display.textContent = ''
+        }
         display.textContent += elementString.substring(3, 4)
         equation += elementString.substring(3, 4)
     })
@@ -123,11 +126,18 @@ function Multiply(number1, number2) {
 }
 
 function Divide(number1, number2) {
+
+    if (number1 == 0 || number2 == 0) {
+        display.textContent = 'ERROR'
+        equation = ''
+
+    } else {
     sum = number1 / number2
     display.textContent = sum
     num1 = sum
     equation = ''
     equation += num1
+    }
 
 }
 function Subtract(number1, number2) {
