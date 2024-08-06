@@ -1,2 +1,2 @@
 # calculator
-Made Samsung Calculator
+Calculator
