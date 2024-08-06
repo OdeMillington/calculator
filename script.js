@@ -7,10 +7,13 @@ const negpos = document.querySelector('#negpos')
 const percent = document.querySelector('#percent')
 const decimal = document.querySelector('#decimal')
 const add = document.querySelector('#addOperator')
-const equalOperator = document.querySelector('#equalOperator') 
-const divide = document.querySelector('#divideOperator')
-const multiply = document.querySelector('#multiplyOperator')
-const subtract = document.querySelector('#subtractOperator')
+
+
+const operators = ['addOperator', 'muliplyOperator', 'equalOperator', 'divideOperator', 'subtractOperator']
+
+operators.forEach((element) => {
+    element = document.querySelector(`#${element}`) 
+})
 
 let equation = ''
 
@@ -85,22 +88,22 @@ equalOperator.addEventListener('click', () => {
 
 })
 
-add.addEventListener('click', () => {
+addOperator.addEventListener('click', () => {
     equation += " + "
     display.textContent = ''
 })
 
-divide.addEventListener('click', () => {
+divideOperator.addEventListener('click', () => {
     equation += " / "
     display.textContent = ''
 })
 
-multiply.addEventListener('click', () => {
+multiplyOperator.addEventListener('click', () => {
     equation += " x "
     display.textContent = ''
 })
 
-subtract.addEventListener('click', () => {
+subtractOperator.addEventListener('click', () => {
     equation += " - "
     display.textContent = ''
 })
